@@ -150,6 +150,10 @@ header {
       color: var(--eerie-black);
       animation: bounceIn;
       animation-duration: 2s;
+      &:hover {
+        color: var(--brilliant-rose);
+        background: var(--verdigris);
+      }
     }
   }
   .slides:nth-child(2) {
@@ -173,6 +177,10 @@ header {
         font-size: 1.5rem;
         padding: 1rem 2rem;
         color: var(--eerie-black);
+        &:hover {
+          color: var(--brilliant-rose);
+          background: var(--verdigris);
+        }
       }
       a:last-child {
         outline: 2px solid var(--parchment);
@@ -181,6 +189,11 @@ header {
         font-size: 1.5rem;
         padding: 1rem 2rem;
         color: var(--parchment);
+        &:hover {
+          color: var(--brilliant-rose);
+          background: var(--verdigris);
+          outline: 2px solid var(--brilliant-rose);
+        }
       }
     }
     p {
@@ -229,7 +242,9 @@ header {
       );
       border-image-slice: 1;
       padding: 1.5rem;
-
+      &:hover {
+        background-color: var(--verdigris);
+      }
       svg {
         fill: url(#gradient-horizontal) gray;
       }
