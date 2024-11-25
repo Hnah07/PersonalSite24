@@ -1,0 +1,16 @@
+{
+  "name": "website2024",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --open --host",
+    "build": "vite build",
+    "preview": "vite preview --open --host",
+    "deploy-main": "surge ./dist hannahcasier.surge.sh",
+    "deploy-develop": "surge ./dist hannahcasier-test.surge.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
