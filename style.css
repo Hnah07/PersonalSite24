@@ -395,11 +395,18 @@ header {
 }
 
 @media (min-width: 1200px) {
+  .slides:nth-child(2),
+  .slides:nth-child(3) {
+    height: 100vh;
+    h2 {
+      margin-top: 25vh;
+    }
+  }
   p {
     font-size: 2rem;
     line-height: 2.5rem;
   }
   #skills li {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }
