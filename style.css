@@ -240,9 +240,7 @@ header {
     > h2 {
       margin-bottom: 2rem;
     }
-    .form h2 {
-      margin-top: 5rem;
-    }
+
     .links {
       display: flex; /* Maakt de container voor de links horizontaal */
       gap: 1rem; /* Voeg ruimte tussen de links toe */
@@ -265,47 +263,55 @@ header {
         fill: url(#gradient-horizontal) gray;
       }
     }
-    .form form {
-      display: flex;
-      flex-direction: column;
-      /* align-items: center; */
-      /* justify-content: center; */
-      width: 100%;
+    .form {
+      h2 {
+        margin-top: 5rem;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        /* justify-content: center; */
+        width: 100%;
 
-      input,
-      textarea {
-        border: 2px solid var(--verdigris);
-        border-radius: 5px;
-        background-color: var(--eerie-black);
-        height: 5rem;
-        color: var(--brilliant-rose);
-      }
-      textarea {
-        resize: both;
-        max-width: 100%;
-      }
-      ::placeholder {
-        color: var(--parchment);
-        opacity: 0.5;
-      }
-      :focus {
-        border: var(--brilliant-rose);
-      }
-      input[type="submit"] {
-        background-image: linear-gradient(
-          90deg,
-          var(--brilliant-rose),
-          var(--verdigris)
-        );
-        border-radius: 100px;
-        font-size: 1.5rem;
-        padding: 1rem 2rem;
-        width: fit-content;
-        color: var(--eerie-black);
-        border: none;
-        &:hover {
+        input,
+        textarea {
+          border: 2px solid var(--verdigris);
+          border-radius: 5px;
+          background-color: var(--eerie-black);
+          height: 5rem;
           color: var(--brilliant-rose);
-          background: var(--verdigris);
+        }
+        textarea {
+          resize: both;
+          max-width: 100%;
+        }
+        ::placeholder {
+          color: var(--parchment);
+          opacity: 0.5;
+        }
+        :focus {
+          border: var(--brilliant-rose);
+        }
+        input[type="submit"] {
+          background-image: linear-gradient(
+            90deg,
+            var(--brilliant-rose),
+            var(--verdigris)
+          );
+          border-radius: 100px;
+          font-size: 1.5rem;
+          padding: 1rem 2rem;
+          width: inherit;
+          align-self: center;
+          color: var(--eerie-black);
+          border: none;
+          &:hover {
+            color: var(--brilliant-rose);
+            background: var(--verdigris);
+          }
         }
       }
     }
@@ -313,10 +319,11 @@ header {
   footer {
     padding: 2rem;
     margin-top: 2rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
     text-align: left;
     width: 100%;
-    font-weight: 200;
+    color: black;
     background-image: linear-gradient(
         90deg,
         rgba(255, 105, 180, 0.5),
@@ -339,4 +346,60 @@ header {
   /* scroll-snap-align: start; */
   /* padding-top: 110px; */
   justify-content: center;
+}
+
+@media (min-width: 600px) {
+  h1,
+  h2 {
+    font-size: 8rem;
+  }
+  p,
+  ul {
+    max-width: 70vw;
+  }
+  #hey > p {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  h2 {
+    font-size: 6rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    div:nth-child(1),
+    div:nth-child(4) {
+      grid-column: 1/-1;
+    }
+    .slides:nth-child(2),
+    .slides:nth-child(3) {
+      padding-inline: 2rem;
+      display: flex;
+      justify-content: left;
+      align-items: start;
+      > h2 {
+        margin-left: 1rem;
+      }
+      .buttons {
+        margin-left: 1rem;
+      }
+      .skill {
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  #skills li {
+    font-size: 2rem;
+  }
 }
