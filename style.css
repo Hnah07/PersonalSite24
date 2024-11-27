@@ -23,6 +23,7 @@ h2 {
   font-family: "Pirata One", sans-serif;
   font-weight: 400;
   font-size: 4rem;
+
   background-image: linear-gradient(
     90deg,
     var(--brilliant-rose),
@@ -32,6 +33,12 @@ h2 {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+}
+p {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 1rem;
+  line-height: 2rem;
 }
 header > a {
   &:nth-child(2) {
@@ -50,8 +57,9 @@ header {
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 5px 20px 5px 5px;
   background-color: var(--eerie-black);
+  position: relative;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -108,7 +116,8 @@ header {
     align-items: center;
     justify-content: center;
     position: relative; /* Nodig om pseudo-element correct te positioneren */
-    z-index: 0; /* Zorg dat het pseudo-element erachter ligt */
+    z-index: 0; /*  Zorg dat het element erachter ligt */
+    height: 100vh;
     h1 {
       animation: fadeInLeft;
       animation-duration: 2s;
@@ -161,10 +170,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    *:not(p) {
-      margin-top: 1rem;
-    }
     .buttons {
+      margin-top: 1.5rem;
       a {
         text-decoration: none;
       }
@@ -197,25 +204,26 @@ header {
         }
       }
     }
-    p {
+    /* p {
       font-weight: 300;
       font-size: 1.5rem;
       margin: 1rem;
       line-height: 2rem;
-    }
+    } */
   }
   .slides:nth-child(3) {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    height: 60vh;
     .skill {
       padding-top: 3rem;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      div {
+      li {
         border: 2px solid var(--parchment);
         border-radius: 3px;
         margin: 0.5rem;
@@ -228,11 +236,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    > h2 {
+      margin-bottom: 2rem;
+    }
+
     .links {
       display: flex; /* Maakt de container voor de links horizontaal */
       gap: 1rem; /* Voeg ruimte tussen de links toe */
       flex-direction: row;
-      margin-top: 2rem;
+      /* margin-top: 2rem; */
     }
     a {
       border: 0.8rem solid;
@@ -250,6 +263,75 @@ header {
         fill: url(#gradient-horizontal) gray;
       }
     }
+    .form {
+      h2 {
+        margin-top: 5rem;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        /* justify-content: center; */
+        width: 100%;
+
+        input,
+        textarea {
+          border: 2px solid var(--verdigris);
+          border-radius: 5px;
+          background-color: var(--eerie-black);
+          height: 5rem;
+          color: var(--brilliant-rose);
+        }
+        textarea {
+          resize: both;
+          max-width: 100%;
+        }
+        ::placeholder {
+          color: var(--parchment);
+          opacity: 0.5;
+        }
+        :focus {
+          border: var(--brilliant-rose);
+        }
+        input[type="submit"] {
+          background-image: linear-gradient(
+            90deg,
+            var(--brilliant-rose),
+            var(--verdigris)
+          );
+          border-radius: 100px;
+          font-size: 1.5rem;
+          padding: 1rem 2rem;
+          width: inherit;
+          align-self: center;
+          color: var(--eerie-black);
+          border: none;
+          &:hover {
+            color: var(--brilliant-rose);
+            background: var(--verdigris);
+          }
+        }
+      }
+    }
+  }
+  footer {
+    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: left;
+    width: 100%;
+    color: black;
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 105, 180, 0.5),
+        rgba(67, 179, 173, 0.5)
+      ),
+      url("/Noise Gradient.svg");
+    /* background-repeat: repeat; */
+    background-blend-mode: darken;
   }
 }
 #gradient-horizontal {
@@ -258,8 +340,66 @@ header {
 }
 .slides {
   width: 100%;
-  height: 100vh;
+  height: fit-content;
+  padding-top: 7rem;
   display: flex;
-  scroll-snap-align: start;
-  padding-top: 100px;
+  /* scroll-snap-align: start; */
+  /* padding-top: 110px; */
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  h1,
+  h2 {
+    font-size: 8rem;
+  }
+  p,
+  ul {
+    max-width: 70vw;
+  }
+  #hey > p {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  h2 {
+    font-size: 6rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    div:nth-child(1),
+    div:nth-child(4) {
+      grid-column: 1/-1;
+    }
+    .slides:nth-child(2),
+    .slides:nth-child(3) {
+      padding-inline: 2rem;
+      display: flex;
+      justify-content: left;
+      align-items: start;
+      > h2 {
+        margin-left: 1rem;
+      }
+      .buttons {
+        margin-left: 1rem;
+      }
+      .skill {
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  #skills li {
+    font-size: 2rem;
+  }
 }
