@@ -57,7 +57,7 @@ header {
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 5px 20px 5px 5px;
   background-color: var(--eerie-black);
   position: relative;
   position: fixed;
@@ -282,6 +282,7 @@ header {
       }
       textarea {
         resize: both;
+        max-width: 100%;
       }
       ::placeholder {
         color: var(--parchment);
@@ -315,14 +316,14 @@ header {
     font-size: 1rem;
     text-align: left;
     width: 100%;
-    font-weight: 100;
+    font-weight: 200;
     background-image: linear-gradient(
         90deg,
         rgba(255, 105, 180, 0.5),
         rgba(67, 179, 173, 0.5)
       ),
       url("/Noise Gradient.svg");
-    background-repeat: repeat;
+    /* background-repeat: repeat; */
     background-blend-mode: darken;
   }
 }
@@ -338,10 +339,4 @@ header {
   /* scroll-snap-align: start; */
   /* padding-top: 110px; */
   justify-content: center;
-}
-
-@media (max-width: 375px) {
-  .slides {
-    padding-top: 10rem;
-  }
 }
