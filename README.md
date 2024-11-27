@@ -7,3 +7,8 @@
 - css
 - git
 - github
+
+## Technologies wishing to use in the future
+
+- JavaScript
+- Node.js or PHP
