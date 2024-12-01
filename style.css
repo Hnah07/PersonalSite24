@@ -122,9 +122,15 @@ header {
       animation: fadeInLeft;
       animation-duration: 2s;
     }
-    p {
+    p:nth-child(2) {
       animation: fadeInRight;
       animation-duration: 2s;
+    }
+    p:nth-child(3) {
+      animation: fadeInLeft;
+      animation-duration: 2s;
+      color: var(--brilliant-rose);
+      font-weight: 200;
     }
     &::before {
       content: "";
@@ -321,7 +327,7 @@ header {
     margin-top: 2rem;
     font-size: 1.3rem;
     font-weight: 400;
-    text-align: left;
+    text-align: center;
     width: 100%;
     color: black;
     background-image: linear-gradient(
@@ -395,18 +401,25 @@ header {
 }
 
 @media (min-width: 1200px) {
-  .slides:nth-child(2),
-  .slides:nth-child(3) {
-    height: 100vh;
-    h2 {
-      margin-top: 25vh;
+  .container {
+    .slides:nth-child(2),
+    .slides:nth-child(3) {
+      max-width: 60rem;
+      height: 100vh;
+      display: flex;
+      flex-basis: auto;
+      /* max-width: 80%; */
+      margin: 0 auto;
+      h2 {
+        margin-top: 25vh;
+      }
     }
-  }
-  p {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-  #skills li {
-    font-size: 1.7rem;
+    p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+    #skills li {
+      font-size: 1.7rem;
+    }
   }
 }
