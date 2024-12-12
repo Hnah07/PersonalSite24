@@ -11,6 +11,10 @@
 }
 * {
   box-sizing: border-box;
+  &::selection {
+    background-color: var(--brilliant-rose);
+    color: var(--eerie-black);
+  }
 }
 body {
   background-color: var(--eerie-black);

@@ -1,17 +1,15 @@
 const skillListItems = document.querySelectorAll(".skill li");
 
-// Voeg een attribuut toe aan elk <li> element
 skillListItems.forEach((li) => {
-  li.setAttribute("data-tilt", ""); // Voeg een attribuut toe, bijvoorbeeld 'data-example'
-  li.setAttribute("data-tilt-glare", ""); // Voeg een attribuut toe, bijvoorbeeld 'data-example'
+  li.setAttribute("data-tilt", "");
+  li.setAttribute("data-tilt-glare", "");
 });
 
-const linksListItems = document.querySelectorAll(".links a");
+const linksAnchors = document.querySelectorAll(".links a");
 
-// Voeg een attribuut toe aan elk <li> element
-linksListItems.forEach((li) => {
-  li.setAttribute("data-tilt", ""); // Voeg een attribuut toe, bijvoorbeeld 'data-example'
-  li.setAttribute("data-tilt-glare", ""); // Voeg een attribuut toe, bijvoorbeeld 'data-example'
+linksAnchors.forEach((li) => {
+  li.setAttribute("data-tilt", "");
+  li.setAttribute("data-tilt-glare", "");
 });
 
 var VanillaTilt = (function () {
