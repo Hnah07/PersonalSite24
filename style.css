@@ -293,7 +293,7 @@ header {
         }
       }
       div:nth-child(1)::after {
-        background-image: url(/crud.png);
+        background-image: url(/css-tip-calculator.png);
       }
       div:nth-child(2)::after {
         background-image: url(/mockup_metal_ipod_wallpaper.jpg);
